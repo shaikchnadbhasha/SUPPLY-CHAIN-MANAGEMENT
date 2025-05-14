@@ -1,0 +1,4 @@
+Inventory of Product X: 450 units
+Forecast for Product X: 120 units needed
+{'location': 'En route', 'temp': '4°C'}
+encrypted(supplier_info)
