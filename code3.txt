@@ -1,0 +1,28 @@
+# Simplified Phase 3 Supply Chain Implementation
+
+# 1. AI Forecast (Mock)
+def predict_demand(product):
+    return f"Forecast for {product}: 120 units needed"
+
+# 2. Chatbot (Mock)
+def chatbot(query):
+    if "inventory" in query:
+        return "Inventory of Product X: 450 units"
+    elif "reorder" in query:
+        return predict_demand("Product X")
+    return "Sorry, I didn't understand that."
+
+# 3. IoT Data (Mock)
+def get_iot_data():
+    return {"location": "En route", "temp": "4°C"}
+
+# 4. Data Security (Mock)
+def encrypt(data):
+    return f"encrypted({data})"
+
+# 5. Test
+if _name_ == "_main_":
+    print(chatbot("What’s the inventory level of Product X?"))
+    print(chatbot("When should we reorder raw materials?"))
+    print(get_iot_data())
+    print(encrypt("supplier_info"))
