@@ -1,0 +1,3 @@
+Forecasted Demand for Week 7: 197 units
+Current Stock Level (from IoT): 191 units
+⚠️ Restock needed: Order 36 units.
