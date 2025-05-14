@@ -1,0 +1,40 @@
+import time, random
+from sklearn.ensemble import RandomForestRegressor
+from cryptography.fernet import Fernet
+
+# 1. Simple AI Model Simulation
+def train_model():
+    X = [[random.random() for _ in range(5)] for _ in range(50)]
+    y = [random.uniform(50, 150) for _ in range(50)]
+    model = RandomForestRegressor().fit(X, y)
+    print("[AI] Model trained.")
+    return model
+
+# 2. Simple Supplier Chatbot
+def chatbot(message, lang="en"):
+    replies = {"en": "Order confirmed.", "es": "Pedido confirmado."}
+    return replies.get(lang, replies["en"])
+
+# 3. IoT Simulation
+def iot_read():
+    return {"temp": round(random.uniform(2, 8), 2), "loc": "Warehouse A"}
+
+# 4. Encryption Demo
+def secure_data(data):
+    key = Fernet.generate_key()
+    f = Fernet(key)
+    encrypted = f.encrypt(data.encode())
+    print("[Security] Encrypted:", encrypted[:10], "...")
+    return f.decrypt(encrypted).decode()
+
+# 5. Performance Metrics
+def metrics(start):
+    print("[Metrics] Latency:", round(time.time() - start, 2), "s")
+
+# Main
+start = time.time()
+model = train_model()
+print("[Chatbot]", chatbot("Status?", "es"))
+print("[IoT]", iot_read())
+print("[Decrypted]", secure_data("Order#12345"))
+metrics(start)
